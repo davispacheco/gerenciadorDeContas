@@ -1,0 +1,23 @@
+package com.modulo5.backEnd.DTO;
+
+import com.modulo5.backEnd.model.CidadeModel;
+import com.modulo5.backEnd.model.EstadoModel;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Getter
+@Setter
+public class CidadeDTO {
+    @NotBlank(message = "Nome da cidade deve ser preenchido.")
+    private String nomeCidade;
+
+    @NotNull(message = "Estado deve ser preenchido.")
+    private EstadoModel estado;
+
+    public CidadeModel converterParaObjeto() {
+        return new CidadeModel(nomeCidade, estado);
+    }
+}

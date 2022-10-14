@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+        <title>Cadastro de Usuário</title>
+    </head>
+
+    <body>
+        <div class="text-center">
+        <h1>Cadastro de Usuário</h1>
+        </div>
+        <button type="button" class="btn btn-danger" id="btnCadastro">Cadastrar usuário</button>
+        <dialog id="cadastro" title="Cadastro de Usuário">
+        <form id="usuarioForm" method="dialog">
+            <div class="text-center">
+            <h3>Informe os dados do usuário.</h3>
+            </div>
+            <div class="nb-3">
+            <label for="nomeUsuario" class="form-label">Nome do usuário</label>
+            <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" placeholder="Digite o nome do usuário:" required />
+            </div>
+            <div class="nb-3">
+            <label for="dataNascimento" class="form-label">Data de nascimento</label>
+            <input type="text" class="form-control" id="dataNascimento" name="dataNascimento" placeholder="Qual a data de nascimento?" required />
+            </div>
+            <div class="nb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Informe o e-mail:" required />
+            </div>
+            <div class="nb-3">
+            <label for="cpf" class="form-label">CPF</label>
+<input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite o CPF:" required />
+            </div>
+            <menu>
+                <button type="reset" class="btn btn-close btn-lg" id="cancelar">Cancelar</button>
+<button type="submit" class="btn btn-primary btn-lg" id="enviar">Enviar</button>
+        </form>
+        </dialog>
+          
+        <script src="js/usuario.js"></script>
+
+    </body>
+</html>
