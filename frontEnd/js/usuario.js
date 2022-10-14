@@ -31,5 +31,5 @@ fetch("http://localhost:8080/usuarios", {
 
 function msg() {
     alert("Usuário salvo com sucesso!");
-    window.location.reload(true);
+    //window.location.reload(true);
 }

@@ -27,7 +27,7 @@ public class EnderecoController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping(path = "/id/{id}")
-    public ResponseEntity<Optional<EnderecoModel>> buscarEnderecoPorId(@PathVariable Long id) {
+    public ResponseEntity<EnderecoModel> buscarEnderecoPorId(@PathVariable Long id) {
         return ResponseEntity.ok(enderecoService.buscarPorId(id));
     }
 
@@ -41,7 +41,7 @@ public class EnderecoController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping(path = "/id/{id}")
     public ResponseEntity<EnderecoRespostaDTO> alterarEndereco(@RequestBody EnderecoDTO dto, @PathVariable Long id) {
-        EnderecoModel endereco = enderecoService.alterar(dto.converterParaObjeto());
+        EnderecoModel endereco = enderecoService.alterar(dto.converterParaObjeto(), id);
         return ResponseEntity.ok(EnderecoRespostaDTO.converterParaDTO(endereco));
     }
 

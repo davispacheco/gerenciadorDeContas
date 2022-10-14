@@ -19,16 +19,20 @@ public class UsuarioService {
         return UsuarioRespostaDTO.converterLista(usuarios);
     }
 
-    public Optional<UsuarioModel> buscarPorId(Long codigo) {
-        return usuarioRepository.findById(codigo);
+    public UsuarioModel buscarPorId(Long codigo) {
+        Optional<UsuarioModel> obj = usuarioRepository.findById(codigo);
+        return obj.get();
     }
 
     public UsuarioModel cadastrar(UsuarioModel usuarioModel) {
         return usuarioRepository.save(usuarioModel);
     }
 
-    public UsuarioModel alterar(UsuarioModel usuarioModel) {
-        return usuarioRepository.save(usuarioModel);
+    public UsuarioModel alterar(UsuarioModel usuarioModel, Long codigo) {
+        UsuarioModel newUsuario = buscarPorId(codigo);
+        newUsuario.setNomeUsuario(usuarioModel.getNomeUsuario());
+        newUsuario.setEmail(usuarioModel.getEmail());
+        return usuarioRepository.save(newUsuario);
     }
 
     public void deletar(Long codigo) {

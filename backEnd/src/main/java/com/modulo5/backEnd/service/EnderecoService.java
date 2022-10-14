@@ -19,16 +19,20 @@ public class EnderecoService {
         return EnderecoRespostaDTO.converterLista(enderecos);
     }
 
-    public Optional<EnderecoModel> buscarPorId(Long codigo) {
-        return enderecoRepository.findById(codigo);
+    public EnderecoModel buscarPorId(Long codigo) {
+        Optional<EnderecoModel> obj = enderecoRepository.findById(codigo);
+        return obj.get();
     }
 
     public EnderecoModel cadastrar(EnderecoModel enderecoModel) {
         return enderecoRepository.save(enderecoModel);
     }
 
-    public EnderecoModel alterar(EnderecoModel enderecoModel) {
-        return enderecoRepository.save(enderecoModel);
+    public EnderecoModel alterar(EnderecoModel enderecoModel, Long codigo) {
+        EnderecoModel newEndereco = buscarPorId(codigo);
+        newEndereco.setLogradouro(enderecoModel.getLogradouro());
+        newEndereco.setBairro(enderecoModel.getBairro());
+        return enderecoRepository.save(newEndereco);
     }
 
     public void deletar(Long codigo) {

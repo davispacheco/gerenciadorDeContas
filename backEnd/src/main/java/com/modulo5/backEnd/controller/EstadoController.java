@@ -27,7 +27,7 @@ public class EstadoController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping(path = "/id/{id}")
-    public ResponseEntity<Optional<EstadoModel>> buscarEstadoPorId(@PathVariable Long id) {
+    public ResponseEntity<EstadoModel> buscarEstadoPorId(@PathVariable Long id) {
         return ResponseEntity.ok(estadoService.buscarPorId(id));
     }
 
@@ -41,7 +41,7 @@ public class EstadoController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping(path = "/id/{id}")
     public ResponseEntity<EstadoRespostaDTO> alterarEstado(@RequestBody EstadoDTO dto, @PathVariable Long id) {
-        EstadoModel estado = estadoService.alterar(dto.converterParaObjeto());
+        EstadoModel estado = estadoService.alterar(dto.converterParaObjeto(), id);
         return ResponseEntity.ok(EstadoRespostaDTO.converterParaDTO(estado));
     }
 

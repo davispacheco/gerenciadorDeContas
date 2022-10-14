@@ -27,7 +27,7 @@ public class CidadeController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Optional<CidadeModel>> buscarCidadePorId(@PathVariable Long id) {
+    public ResponseEntity<CidadeModel> buscarCidadePorId(@PathVariable Long id) {
         return ResponseEntity.ok(cidadeService.buscarPorId(id));
     }
 
@@ -41,7 +41,7 @@ public class CidadeController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping(path = "/{id}")
     public ResponseEntity<CidadeRespostaDTO> alterarCidade(@RequestBody CidadeDTO dto, @PathVariable Long id) {
-        CidadeModel cidade = cidadeService.alterar(dto.converterParaObjeto());
+        CidadeModel cidade = cidadeService.alterar(dto.converterParaObjeto(), id);
         return ResponseEntity.ok(CidadeRespostaDTO.converterParaDTO(cidade));
     }
 

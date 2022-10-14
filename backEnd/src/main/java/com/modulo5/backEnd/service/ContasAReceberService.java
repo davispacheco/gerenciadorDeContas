@@ -25,8 +25,9 @@ public class ContasAReceberService {
         return ContasAReceberRespostaDTO.converterLista(contas);
     }
 
-    public Optional<ContasAReceberModel> buscarPorId(Long codigo) {
-        return contasAReceberRepository.findById(codigo);
+    public ContasAReceberModel buscarPorId(Long codigo) {
+        Optional<ContasAReceberModel> obj = contasAReceberRepository.findById(codigo);
+        return obj.get();
     }
 
     public List<ContasAReceberModel> buscarPorStatus(String status) {
@@ -66,7 +67,8 @@ public class ContasAReceberService {
         return contasAReceberRepository.save(contasAReceberModel);
     }
 
-    public ContasAReceberModel alterar(ContasAReceberModel contasAReceberModel) {
+    public ContasAReceberModel alterar(ContasAReceberModel contasAReceberModel, Long codigo) {
+        ContasAReceberModel newConta = buscarPorId(codigo);
         if ("pago".equalsIgnoreCase(contasAReceberModel.getStatus())) {
             LocalDateTime dataAtual = LocalDateTime.now();
             contasAReceberModel.setDataDeRecebimento(dataAtual);

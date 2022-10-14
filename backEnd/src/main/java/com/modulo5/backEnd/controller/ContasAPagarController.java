@@ -29,7 +29,7 @@ public class ContasAPagarController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping(path = "/id/{id}")
-    public ResponseEntity<Optional<ContasAPagarModel>> buscarContaPorId(@PathVariable Long id) {
+    public ResponseEntity<ContasAPagarModel> buscarContaPorId(@PathVariable Long id) {
         return ResponseEntity.ok(contasAPagarService.buscarPorId(id));
     }
 
@@ -61,7 +61,7 @@ public class ContasAPagarController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping(path = "/id/{id}")
     public ResponseEntity<ContasAPagarRespostaDTO> alterarConta(@RequestBody ContasAPagarDTO dto, @PathVariable Long id) {
-        ContasAPagarModel conta = contasAPagarService.alterar(dto.converterParaObjeto());
+        ContasAPagarModel conta = contasAPagarService.alterar(dto.converterParaObjeto(), id);
         return ResponseEntity.ok(ContasAPagarRespostaDTO.converterParaDTO(conta));
     }
 

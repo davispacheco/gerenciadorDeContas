@@ -19,16 +19,19 @@ public class CidadeService {
         return CidadeRespostaDTO.converterLista(cidades);
     }
 
-    public Optional<CidadeModel> buscarPorId(Long codigo) {
-        return cidadeRepository.findById(codigo);
+    public CidadeModel buscarPorId(Long codigo) {
+        Optional<CidadeModel> obj = cidadeRepository.findById(codigo);
+        return obj.get();
     }
 
     public CidadeModel cadastrar(CidadeModel cidadeModel) {
         return cidadeRepository.save(cidadeModel);
     }
 
-    public CidadeModel alterar(CidadeModel cidadeModel) {
-        return cidadeRepository.save(cidadeModel);
+    public CidadeModel alterar(CidadeModel cidadeModel, Long codigo) {
+        CidadeModel newCidade = buscarPorId(codigo);
+        newCidade.setNomeCidade(cidadeModel.getNomeCidade());
+        return cidadeRepository.save(newCidade);
     }
 
     public void deletar(Long codigo) {

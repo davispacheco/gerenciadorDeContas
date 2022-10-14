@@ -27,7 +27,7 @@ public class UsuarioController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping(path = "/id/{id}")
-    public ResponseEntity<Optional<UsuarioModel>> buscarUsuarioPorId(@PathVariable Long id) {
+    public ResponseEntity<UsuarioModel> buscarUsuarioPorId(@PathVariable Long id) {
         return ResponseEntity.ok(usuarioService.buscarPorId(id));
     }
 
@@ -41,7 +41,7 @@ public class UsuarioController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping(path = "/id/{id}")
     public ResponseEntity<UsuarioRespostaDTO> alterarUsuario(@RequestBody UsuarioDTO dto, @PathVariable Long id) {
-        UsuarioModel usuario = usuarioService.alterar(dto.converterParaObjeto());
+        UsuarioModel usuario = usuarioService.alterar(dto.converterParaObjeto(), id);
         return ResponseEntity.ok(UsuarioRespostaDTO.converterParaDTO(usuario));
     }
 

@@ -23,8 +23,9 @@ public class ContasAPagarService {
         return ContasAPagarRespostaDTO.converterLista(contas);
     }
 
-    public Optional<ContasAPagarModel> buscarPorId(Long id) {
-        return contasAPagarRepository.findById(id);
+    public ContasAPagarModel buscarPorId(Long id) {
+        Optional<ContasAPagarModel> obj = contasAPagarRepository.findById(id);
+        return obj.get();
     }
 
     public List<ContasAPagarModel> buscarPorNome(String nome) {
@@ -49,12 +50,13 @@ public class ContasAPagarService {
         return contasAPagarRepository.save(contasAPagarModel);
     }
 
-    public ContasAPagarModel alterar(ContasAPagarModel contasAPagarModel) {
+    public ContasAPagarModel alterar(ContasAPagarModel contasAPagarModel, Long id) {
+        ContasAPagarModel newConta = buscarPorId(id);
         if (contasAPagarModel.getStatus().equals(Status.PAGO)) {
             LocalDateTime dataAtual = LocalDateTime.now();
-            contasAPagarModel.setDataDePagamento(dataAtual);
+            newConta.setDataDePagamento(dataAtual);
         }
-        return contasAPagarRepository.save(contasAPagarModel);
+        return contasAPagarRepository.save(newConta);
     }
 
     public void deletar(Long codigo) {
