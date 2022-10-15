@@ -34,8 +34,10 @@ public class ContasAReceberModel implements Serializable {
     private BigDecimal valorFinal;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private TipoRecebido tipoRecebido;
 
+    @Enumerated(EnumType.STRING)
     private RecebimentoAlugueis recebimentoAlugueis;
 
     @Column(nullable = false)
