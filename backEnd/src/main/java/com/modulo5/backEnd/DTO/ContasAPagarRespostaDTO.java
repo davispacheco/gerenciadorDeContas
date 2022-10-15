@@ -1,6 +1,6 @@
 package com.modulo5.backEnd.DTO;
 
-import com.modulo5.backEnd.enumeration.Status;
+import com.modulo5.backEnd.enums.Status;
 import com.modulo5.backEnd.model.ContasAPagarModel;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

@@ -2,7 +2,7 @@ package com.modulo5.backEnd.controller;
 
 import com.modulo5.backEnd.DTO.ContasAReceberDTO;
 import com.modulo5.backEnd.DTO.ContasAReceberRespostaDTO;
-import com.modulo5.backEnd.enumeration.TipoRecebido;
+import com.modulo5.backEnd.enums.TipoRecebido;
 import com.modulo5.backEnd.factory.AlugueisFactory;
 import com.modulo5.backEnd.model.ContasAReceberModel;
 import com.modulo5.backEnd.service.ContasAReceberService;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/contasreceber")

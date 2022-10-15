@@ -2,8 +2,8 @@ package com.modulo5.backEnd.service;
 
 import com.modulo5.backEnd.DTO.ContasAPagarRespostaDTO;
 import com.modulo5.backEnd.model.ContasAPagarModel;
-import com.modulo5.backEnd.enumeration.Status;
-import com.modulo5.backEnd.enumeration.Tipo;
+import com.modulo5.backEnd.enums.Status;
+import com.modulo5.backEnd.enums.Tipo;
 import com.modulo5.backEnd.repository.ContasAPagarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

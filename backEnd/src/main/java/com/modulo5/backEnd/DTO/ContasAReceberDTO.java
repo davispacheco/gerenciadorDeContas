@@ -1,7 +1,7 @@
 package com.modulo5.backEnd.DTO;
 
-import com.modulo5.backEnd.enumeration.RecebimentoAlugueis;
-import com.modulo5.backEnd.enumeration.TipoRecebido;
+import com.modulo5.backEnd.enums.RecebimentoAlugueis;
+import com.modulo5.backEnd.enums.TipoRecebido;
 import com.modulo5.backEnd.model.ContasAReceberModel;
 import com.modulo5.backEnd.model.UsuarioModel;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.modulo5.backEnd.factory;
 
-import com.modulo5.backEnd.enumeration.RecebimentoAlugueis;
+import com.modulo5.backEnd.enums.RecebimentoAlugueis;
 import com.modulo5.backEnd.model.ContasAReceberModel;
 
 public class AlugueisFactory {

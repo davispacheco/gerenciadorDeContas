@@ -1,4 +1,4 @@
-package com.modulo5.backEnd.enumeration;
+package com.modulo5.backEnd.enums;
 
 public enum Status {
     AGUARDANDO,

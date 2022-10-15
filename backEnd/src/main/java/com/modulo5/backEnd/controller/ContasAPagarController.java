@@ -3,8 +3,8 @@ package com.modulo5.backEnd.controller;
 import com.modulo5.backEnd.DTO.ContasAPagarDTO;
 import com.modulo5.backEnd.DTO.ContasAPagarRespostaDTO;
 import com.modulo5.backEnd.model.ContasAPagarModel;
-import com.modulo5.backEnd.enumeration.Status;
-import com.modulo5.backEnd.enumeration.Tipo;
+import com.modulo5.backEnd.enums.Status;
+import com.modulo5.backEnd.enums.Tipo;
 import com.modulo5.backEnd.service.ContasAPagarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/contasapagar")

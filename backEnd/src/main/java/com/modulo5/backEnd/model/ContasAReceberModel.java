@@ -1,7 +1,7 @@
 package com.modulo5.backEnd.model;
 
-import com.modulo5.backEnd.enumeration.RecebimentoAlugueis;
-import com.modulo5.backEnd.enumeration.TipoRecebido;
+import com.modulo5.backEnd.enums.RecebimentoAlugueis;
+import com.modulo5.backEnd.enums.TipoRecebido;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,7 +1,7 @@
 package com.modulo5.backEnd.model;
 
-import com.modulo5.backEnd.enumeration.Status;
-import com.modulo5.backEnd.enumeration.Tipo;
+import com.modulo5.backEnd.enums.Status;
+import com.modulo5.backEnd.enums.Tipo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

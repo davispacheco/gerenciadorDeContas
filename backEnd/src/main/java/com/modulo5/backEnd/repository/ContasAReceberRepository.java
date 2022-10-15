@@ -1,6 +1,6 @@
 package com.modulo5.backEnd.repository;
 
-import com.modulo5.backEnd.enumeration.TipoRecebido;
+import com.modulo5.backEnd.enums.TipoRecebido;
 import com.modulo5.backEnd.model.ContasAReceberModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
