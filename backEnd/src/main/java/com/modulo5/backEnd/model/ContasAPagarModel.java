@@ -27,7 +27,7 @@ public class ContasAPagarModel implements Serializable {
     @Column(nullable = false)
     private double valor;
 
-    @Column(nullable = false)
+    @Column(length = 20, nullable = false)
     @Enumerated(EnumType.STRING)
     private Tipo tipo;
 
@@ -36,6 +36,7 @@ public class ContasAPagarModel implements Serializable {
 
     private LocalDateTime dataDePagamento;
 
+    @Column(length = 20)
     @Enumerated(EnumType.STRING)
     private Status status;
 
